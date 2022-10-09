@@ -1,17 +1,15 @@
 import Item from './Item'
 import '../scss/list.scss'
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { IItem } from '../types';
 
 export default function List() {
   const [items, setItems] = useState<IItem[] | []>([]);
 
   useEffect(() => {
-    axios.get<IItem[]>('https://jsonplaceholder.typicode.com/todos' , { timeout: 10000 })
-         .then((res) => {
-          setItems(res.data);
-         })
+    fetch('https://jsonplaceholder.typicode.com/todos')
+         .then(res => res.json())
+         .then(res => setItems(res))
          .catch((er) => {
           alert(er.message);
          });
@@ -22,7 +20,7 @@ export default function List() {
       <div className="list-container">
         <div className="container">
           {items.map((item) => (
-            <Item key={item.id} id={String(item.id)} data={item}/>
+            <Item key={item.id} _id={String(item.id)} data={item}/>
           ))}
         </div>
       </div>

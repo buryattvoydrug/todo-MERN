@@ -5,6 +5,6 @@ export interface IItem {
   completed: boolean,
 }
 export type ItemProps = {
-  id: string,
+  _id: string,
   data: IItem,
 }
