@@ -11,10 +11,11 @@ export default function Editor() {
           <div className="editor">
             <form action="">
               <div className="item-text">
-                <textarea className="item__title" name="" id="" rows={2} placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, saepe."></textarea>
-                <textarea className="item__description" name="" id="" rows={5} placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero aut quae corporis, sit veritatis possimus fugit mollitia magni tempore dolorum dicta veniam, eum nisi vel iusto asperiores? Nesciunt corrupti exercitationem officiis odit voluptas. Repellat, rem sequi repudiandae dolor, nihil dolorum sint voluptas nobis, nisi exercitationem neque dolores provident possimus nulla?"></textarea>
+                <textarea className="item__title" name="" id="" rows={1} placeholder="Новая запись"></textarea>
+                {/* <textarea className="item__title" name="" id="" rows={2} placeholder="Новая запись"></textarea> */}
+                {/* <textarea className="item__description" name="" id="" rows={5} placeholder="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero aut quae corporis, sit veritatis possimus fugit mollitia magni tempore dolorum dicta veniam, eum nisi vel iusto asperiores? Nesciunt corrupti exercitationem officiis odit voluptas. Repellat, rem sequi repudiandae dolor, nihil dolorum sint voluptas nobis, nisi exercitationem neque dolores provident possimus nulla?"></textarea> */}
               </div>
-              <div className="item-buttons">
+              {/* <div className="item-buttons">
                 <div className="item__checkbox">
                   <input id="editor" type="checkbox" />
                   <label className="checkbox-label" htmlFor="editor">
@@ -29,7 +30,11 @@ export default function Editor() {
                     </>
                   )}
                 </div>
-              </div>
+              </div> */}
+              <button className="submit__editor">
+                {/* ОК */}
+                <strong>+</strong>
+              </button>
             </form>
           </div>
         </div>
