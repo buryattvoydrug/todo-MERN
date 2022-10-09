@@ -65,11 +65,13 @@ export default function Editor() {
                 <strong>+</strong>
               </div>
               : 
-              <div className="submit__editor" onClick={handleSubmit}>ОК</div>}
+              <div className="submit__editor" onClick={handleSubmit}>ОК</div>
+              }
             </form>
           </div>
         </div>
       </div>
+      {active && <div className="hide__button" onClick={() => setActive(false)}></div>}
     </>
   )
 }
