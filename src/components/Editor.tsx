@@ -1,22 +1,35 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { EditorContext } from '../context';
 import '../scss/editor.scss';
-import { postItem } from '../services';
+import { postItem, updateItem } from '../services';
+import { IItem } from '../types';
 
-const defaultForm = {
+const defaultEdit = {
+  id: 0,
   userId: 777,
   title: '',
   completed: false,
 }
+  // const COLORS = ['#000000', '#FB5607', '#FFBE0B', '#8338EC', '#3A86FF'];
 
 export default function Editor() {
-
-  const COLORS = ['#000000', '#FB5607', '#FFBE0B', '#8338EC', '#3A86FF'];
   const [active, setActive] = useState(false);
+  const [form, setForm] = useState<IItem>(defaultEdit);
 
-  const [form, setForm] = useState(defaultForm);
+  const {edit, setEdit} = useContext(EditorContext);
+
+  useEffect(() => {
+    if (edit !== null) {
+      setActive(true);
+      setForm(edit);
+    }
+    console.log('new edit', edit);
+  }, [edit]);
+
 
   const handleChange = (event: React.FormEvent<HTMLTextAreaElement>): void => {
     setForm({
+      id: form.id || 0,
       userId: 777,
       title: event.currentTarget.value,
       completed: false,
@@ -24,11 +37,25 @@ export default function Editor() {
   }
 
   const handleSubmit = (): void => {
-    if (form.title) {
-      postItem(form);
+    if (!form.title) alert('Форма пуста!')
+    if (edit) {
+      updateItem(form);
+    }
+    else {
+      postItem({
+        userId: form.userId,
+        title: form.title,
+        completed: form.completed,
+      });
       setActive(false);
-      setForm(defaultForm);
-    } else { alert('Форма пуста!')}
+      setForm(defaultEdit);
+    }
+  }
+
+  const handleHide = (): void => {
+    setActive(false); 
+    setEdit(null);
+    setForm(defaultEdit);
   }
 
   return (
@@ -71,7 +98,7 @@ export default function Editor() {
           </div>
         </div>
       </div>
-      {active && <div className="hide__button" onClick={() => setActive(false)}></div>}
+      {active && <div className="hide__button" onClick={handleHide}></div>}
     </>
   )
 }

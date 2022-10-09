@@ -1,9 +1,13 @@
-import { ItemProps } from '../types'
+import { IItem, ItemProps } from '../types'
 import '../scss/item.scss';
 import { deleteItem, updateItem } from '../services';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { EditorContext } from '../context';
 
 export default function Item({_id, data}: ItemProps) {
+  const {edit, setEdit} = useContext(EditorContext);
+
+
   const {userId, id, title, completed} = data;
   const [checked, setChecked] = useState(completed);
   const [hidden, setHidden] = useState(false);
@@ -18,9 +22,13 @@ export default function Item({_id, data}: ItemProps) {
     setHidden(true);
   }
 
+  const handleChangeContext = (): void => {
+    setEdit({userId, id, title, completed});
+  }
+
   return (
     <>
-      {!hidden && <div className="item">
+      {!hidden && <div className="item" onDoubleClick={handleChangeContext}>
         <div className="item-buttons">
           <div className="item__checkbox">
             <input type="checkbox" id={_id} name={_id} checked={checked} onChange={handleCheck}/>
