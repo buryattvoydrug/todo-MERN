@@ -1,11 +1,10 @@
-import { IItem } from './types';
+import { IItem, IPostItem } from './types';
 
-export function postItem({userId, id, title, completed}:IItem): void {
+export function postItem({userId, title, completed}:IPostItem): void {
   fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
       userId,
-      id,
       title,
       completed,
     }),
