@@ -18,7 +18,7 @@ export default function Item({id}: ItemProps) {
         {/* в item-text добавить класс cheked если cheked */}
         <div className="item-text">
           {/* в h3 добавить класс imp если важно */}
-          <h3 className="item__title "><span>Пара по автоматизации бизнес процессов 16:20</span></h3>
+          <h3 className="item__title "><span>Пара по автоматизации автоматизации бизнес процессов 16:20</span></h3>
           <p className="item__description">
             Ссылка на собрание Teams: https://teams.microsoft.com/_?tenantId=21f92996-c72d-4b9f-b5a5-283c00b9ecaa#/pre-join-calling/19:2kN5HI9pf7q6P9KlVq_Xizd-XnEFHTWkJXU_kfnXzs41@thread.tacv2
           </p>

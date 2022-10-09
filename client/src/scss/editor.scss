@@ -1,0 +1,51 @@
+.editor {
+  padding-top: 20px;
+  .item-text {
+    width: 100%;
+    .item__title, .item__description {
+      padding-left: 15px;
+      padding-right: 15px;
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      border-left: 1px solid rgba(0, 0, 0, 0);
+      resize: none;
+      &:focus {
+        border-left: 1px solid #000;
+        outline: none;
+      }
+    }
+  }
+  .item-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px 0;
+    .item__checkbox .checkbox-label {
+      cursor: pointer;
+      margin-left: 63px;
+      .checkbox-label__text {
+        font-weight: 800;
+        margin-left: -63px;
+      }
+    }
+    .color-buttons {
+      display: flex;
+      input {
+        display: none;
+        &:checked + .color__button {
+          outline: 3px solid #000;
+        } 
+      }
+      .color__button {
+        cursor: pointer;
+        margin: 0 3px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
