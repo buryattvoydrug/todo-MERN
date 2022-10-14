@@ -17,6 +17,10 @@
         outline: none;
       }
     }
+    //
+    .item__description {
+      padding-bottom: 10px;
+    }
   }
   .item-buttons {
     display: flex;
@@ -50,6 +54,7 @@
     }
   }
   .submit__editor {
+    cursor: pointer;
     position: absolute;
     display: block;
     text-align: center;

@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "userId": 777,
+      "id": 1,
+      "title": "Пара по АВТОМАТИЗАЦИИ бизнес процессов 16:20",
+      "completed": true
+    },
+    {
+      "userId": 777,
+      "title": "3452345",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "userId": 777,
+      "title": "6",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "userId": 777,
+      "title": "6",
+      "completed": false,
+      "id": 5
+    }
+  ]
+}
