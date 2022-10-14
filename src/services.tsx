@@ -1,7 +1,7 @@
 import { IItem, IPostItem } from './types';
 
 export function postItem({userId, title, completed}:IPostItem): void {
-  fetch('https://jsonplaceholder.typicode.com/posts', {
+  fetch('http://localhost:3001/todos/', {
     method: 'POST',
     body: JSON.stringify({
       userId,
@@ -17,7 +17,7 @@ export function postItem({userId, title, completed}:IPostItem): void {
 }
 
 export function updateItem({userId, id, title, completed}:IItem): void {
-  fetch('https://jsonplaceholder.typicode.com/posts/' + id, {
+  fetch('http://localhost:3001/todos/' + id, {
     method: 'PUT',
     body: JSON.stringify({
       userId,
@@ -34,7 +34,7 @@ export function updateItem({userId, id, title, completed}:IItem): void {
 }
 
 export function deleteItem(id:number): void {
-  fetch('https://jsonplaceholder.typicode.com/posts/' + id, {
+  fetch('http://localhost:3001/todos/' + id, {
     method: 'DELETE',
   });
 }

@@ -7,7 +7,7 @@ export default function List() {
   const [items, setItems] = useState<IItem[] | []>([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
+    fetch('http://localhost:3001/todos')
          .then(res => res.json())
          .then(res => setItems(res))
          .catch((er) => {
