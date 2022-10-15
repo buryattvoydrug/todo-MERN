@@ -9,12 +9,12 @@ export default function Item({_id, data}: ItemProps) {
   const {edit, setEdit} = useContext(EditorContext);
 
 
-  const {userId, id, title, completed} = data;
+  const {userId, id, title, description, completed, important, color} = data;
   const [checked, setChecked] = useState(completed);
   const [hidden, setHidden] = useState(false);
 
   const handleCheck = (): void => {
-    updateItem({userId, id, title, completed: !checked});
+    updateItem({userId, id, title, description, completed: !checked, important, color});
     setChecked(!checked);
   }
 
@@ -24,12 +24,13 @@ export default function Item({_id, data}: ItemProps) {
   }
 
   const handleChangeContext = (): void => {
-    setEdit({userId, id, title, completed});
+    setEdit(data);
   }
 
   return (
     <>
-      {!hidden && <div className="item" onDoubleClick={handleChangeContext}>
+      {!hidden && <div className="item" onDoubleClick={handleChangeContext} 
+      style={{borderRight: "8px solid" + color}}>
         <div className="item-buttons">
           <div className="item__checkbox">
             <input type="checkbox" id={_id} name={_id} checked={checked} onChange={handleCheck}/>
@@ -40,11 +41,8 @@ export default function Item({_id, data}: ItemProps) {
           </button>: ''}
         </div>
         <div className={checked ? "item-text checked" : "item-text"}>
-          {/* в h3 добавить класс imp если пемечено как важное*/}
-          <h3 className={id % 5? "item__title" : "item__title imp"}><span>{title}</span></h3>
-          <p className="item__description">
-            Lorem ipsum {id} dolor sit amet consectetur adipisicing elit. Doloremque sapiente incidunt quod perferendis, sunt reprehenderit atque nulla aspernatur debitis quos aperiam, ad, magni eos repellat. Eligendi debitis, repellat voluptas laborum deserunt, aperiam officia facilis ex obcaecati cupiditate officiis rerum quibusdam!
-          </p>
+          <h3 className={important? "item__title imp" : "item__title"}><span>{title}</span></h3>
+          <p className="item__description">{description}</p>
         </div>
       </div>}
     </>
