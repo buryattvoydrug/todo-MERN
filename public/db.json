@@ -2,39 +2,15 @@
   "todos": [
     {
       "userId": 777,
-      "id": 1,
-      "title": "Пара по АВТОМАТИЗАЦИИ бизнес процессов 16:20",
-      "completed": true
-    },
-    {
-      "userId": 777,
-      "id": 3,
-      "title": "3452345222",
-      "completed": true
-    },
-    {
-      "userId": 777,
       "id": 4,
       "title": "6",
       "completed": true
     },
     {
       "userId": 777,
-      "id": 5,
-      "title": "6",
-      "completed": true
-    },
-    {
-      "userId": 777,
-      "id": 6,
-      "title": "r",
-      "completed": true
-    },
-    {
-      "userId": 777,
-      "title": "1",
+      "title": "123",
       "completed": false,
-      "id": 7
+      "id": 9
     }
   ]
 }

@@ -3,6 +3,7 @@ import '../scss/item.scss';
 import { deleteItem, updateItem } from '../services';
 import { useContext, useState } from 'react';
 import { EditorContext } from '../context';
+import trash from '../images/trash.png';
 
 export default function Item({_id, data}: ItemProps) {
   const {edit, setEdit} = useContext(EditorContext);
@@ -35,7 +36,7 @@ export default function Item({_id, data}: ItemProps) {
             <label  htmlFor={_id}></label>
           </div>
           <button className="item__trash" onClick={handleDelete}>
-            <img src="/images/trash.png" alt="" className="item__trash__image" />
+            <img src={trash} alt="" className="item__trash__image" />
           </button>
         </div>
         <div className={checked ? "item-text checked" : "item-text"}>
