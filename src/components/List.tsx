@@ -9,7 +9,7 @@ export default function List() {
   useEffect(() => {
     fetch('http://localhost:3001/todos')
          .then(res => res.json())
-         .then(res => setItems(res))
+         .then(res => setItems(res.reverse()))
          .catch((er) => {
           alert(er.message);
          });
