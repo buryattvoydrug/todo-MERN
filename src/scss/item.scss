@@ -63,3 +63,13 @@
     font-weight: 300;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .item {
+    margin: 20px 0 20px 15px;
+    border-radius: 0px;
+  }
+  .item-text {
+    padding: 0 20px;
+  }
+}

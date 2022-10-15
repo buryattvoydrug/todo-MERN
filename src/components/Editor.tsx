@@ -114,9 +114,9 @@ export default function Editor() {
                 <div className="color-buttons">
                   {COLORS.map(color => 
                     <>
-                      <input type="radio" name="color" id={color} value={color} checked={form.color === color}
+                      <input type="radio" name="color" key={color} id={color} value={color} checked={form.color === color}
                                                                     onChange={handleColorChange}/>
-                      <label key={color} className="color__button" htmlFor={color} style={{background : color}}>
+                      <label key={color + 's'} className="color__button" htmlFor={color} style={{background : color}}>
                       </label></>
                   )}
                 </div>
