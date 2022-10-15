@@ -35,9 +35,9 @@ export default function Item({_id, data}: ItemProps) {
             <input type="checkbox" id={_id} name={_id} checked={checked} onChange={handleCheck}/>
             <label  htmlFor={_id}></label>
           </div>
-          <button className="item__trash" onClick={handleDelete}>
+          {checked? <button className="item__trash" onClick={handleDelete}>
             <img src={trash} alt="" className="item__trash__image" />
-          </button>
+          </button>: ''}
         </div>
         <div className={checked ? "item-text checked" : "item-text"}>
           {/* в h3 добавить класс imp если пемечено как важное*/}

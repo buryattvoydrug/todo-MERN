@@ -23,7 +23,6 @@ export default function Editor() {
       setActive(true);
       setForm(edit);
     }
-    console.log('new edit', edit);
   }, [edit]);
 
 
